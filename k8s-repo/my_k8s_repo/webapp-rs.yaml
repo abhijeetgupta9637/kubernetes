@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata: 
+  name: webapp-nginx-rs
+spec: 
+  replicas: 9
+  selector:
+    matchLabels:
+      app: web-server
+      app1: nginx-web-server
+  template:
+    metadata:
+      labels:
+        app: web-server
+        app1: nginx-web-server
+    spec:
+      containers:
+      - name: nginx-container
+        image: nginx:1.14.2

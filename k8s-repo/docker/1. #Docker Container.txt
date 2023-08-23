@@ -1,0 +1,60 @@
+#To create container with name >>> 
+docker container run --name <name> -itd <image:[Tag]>
+
+#Docker Container
+#To start Container >>> 
+docker container start <container_id/Name>
+
+#To stop Container >>> 
+docker container stop <container_id/Name>
+
+#To pause Container >>> 
+docker container pause <container_id/Name>
+
+#To Check the cpu and memory utilization of all the container >>> 
+docker container stats
+
+#To check the details about the container >>> 
+docker container inspect <container_id/Name>
+
+
+#To execute any command inside the container >>> 
+docker container exec 
+
+#To Go inside the container >>> 
+docker container exec -it <container_id/Name> bash
+
+#To copy file from host system to container >>> 
+docker container cp <source_address> <container_id/container_name>:<Destination_path>
+
+#To copy file from container to host machine >>> 
+docker container cp <container_id/container_name>:<Destination_path> <destination_address>
+
+#To check the logs of container >>> 
+docker container logs <container_id/container_name>
+
+#To check the follow-up logs of container >>> 
+docker container logs <container_id/container_name> -f
+
+#To take the backup of running container with config >>> 
+docker container commit <container_id/container_name> <image_name[:tag]>
+
+#To remove the container >>> 
+docker container rm <container_id/container_name>
+
+#To remove all stoped container >>> 
+docker container prune
+
+#To print id of all running container >>> 
+docker container ls -q
+
+#To print id of all container >> 
+docker container ls -aq
+
+#To remove all running and stop container >>> 
+docker contaienr rm $(docker container ls -aq)
+
+#Restart policy >>> --restart always
+
+#To create container with specific network >>> 
+docker contaienr run --network demo -itd nginx

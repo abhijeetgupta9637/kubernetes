@@ -1,0 +1,16 @@
+Docker volumes
+
+#To list all the volumes >>> 
+docker volume ls
+
+#To create volume >>> 
+docker volume create <Volume_name>
+
+#To check the details of the volume >>> 
+docker volume inspect <volume_name>
+
+#To create contaienr iwth mount volume>>> 
+docker contaienr run -v <volume_name>:<path_of_container> -itd <image_name[:tag]>
+
+#To remove all unused volumes >>> 
+docker volume prune

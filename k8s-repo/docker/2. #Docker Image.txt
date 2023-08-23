@@ -1,0 +1,28 @@
+#Docker Image
+
+#To list images >>> 
+docker image ls
+
+#To pull the image >>> 
+docker image pull <image_name[:tag]>
+
+#To remove image >>> 
+docker image rm <image_name [:tag]/image_id>
+
+#To get all the detials about the image >>> 
+docker image inspect nginx
+
+#To Tag image  >>> 
+docker image tag <image_id[:tag]/image_id> <repo_id>/<image_name>
+
+#To push image (Tag before push) >>> 
+docker image push <image_name[:tag]>
+
+#To login Docker >>> 
+docker login
+
+#To logout docker >>> 
+docker logout
+
+#To check Layers history of docker file
+docker image history

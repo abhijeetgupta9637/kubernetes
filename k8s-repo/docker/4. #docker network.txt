@@ -1,0 +1,18 @@
+docker network
+
+#To list all the network >>> 
+docker network ls
+
+To inspect network >>> 
+docker network inspect <network_id/Name>
+
+#To create bridge network >>> 
+docker network create <network_name>
+OR
+docker container create -d bridge <network_name>
+
+#To connect running container with network >>> 
+docker network connect <network_name> <container_name>
+
+#To disconnect network from running contaiener >>> 
+docker network disconnect <network_name> <container_name>

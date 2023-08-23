@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata: 
+  name: webapp-nginx-rs
+spec: 
+  replicas: 10
+  selector:
+    matchLabels:
+      app: web-server
+      app1: nginx-web-server
+  template:
+    metadata:
+      labels:
+        app: web-server
+        app1: nginx-web-server
+    spec:  # Added 'spec' under 'template'
+      containers:
+      - name: nginx-container
+        image: nginx
+        volumeMounts:
+          - name: nginx-webapp-volume
+            mountPath: /usr/share/nginx/html
+      volumes:
+      - name: nginx-webapp-volume
+        configMap:
+          name: nginx-html-config
